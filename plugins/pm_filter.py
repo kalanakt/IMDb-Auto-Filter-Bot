@@ -20,6 +20,10 @@ GENRES = ["fun, fact",
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
+         if message == "movie"
+         await message.reply_text("hwkdlejl;")
+         
+           
     if message.text.startswith("/"):
         return
     if AUTH_CHANNEL:
