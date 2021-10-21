@@ -97,7 +97,7 @@ async def start(bot, cmd):
                 SAITAMA_IMG,
                 START_MSG,
                 parse_mode="Markdown",
-                disable_web_page_preview=True,
+                disable_web_page_preview=False,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
