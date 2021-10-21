@@ -96,7 +96,7 @@ async def start(bot, cmd):
         await cmd.reply_photo(
                 SAITAMA_IMG,
                 START_MSG,
-                parse_mode=ParseMode.MARKDOWN,
+                parse_mode="Markdown",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
                     [
