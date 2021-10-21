@@ -103,9 +103,7 @@ async def start(bot, cmd):
                         [
                             InlineKeyboardButton(
                                 text="☑️ Add me",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username,
-                                ),
+                                url="t.me/sumovie_bot"
                             ),
                         ],
                         [
