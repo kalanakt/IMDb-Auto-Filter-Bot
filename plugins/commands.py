@@ -6,17 +6,14 @@ from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
-import html
-import importlib
-
-SUZY_IMG = "https://user-images.githubusercontent.com/86665964/138349156-e7066b7f-9a88-4a40-a6e4-7425c406cba3.jpg"
 
 PM_START_TEXT = """
-Hi {First_Name}, I'm Bae Suzy!
-I am an Advance Auto-Filter bot.Works At Spacious Universe Group.
-Maintance By @kinu6 
+Hey hi {}, I'm {}!
+I am an Anime themed group management bot.
+Built by weebs for weebs, I specialize in managing anime eccentric communities!
 """
 
+SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
@@ -102,27 +99,61 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_photo(
-            SUZY_IMG,
-            PM_START_TEXT,
-            parse_mode="Markdown",
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
+        first_name = update.effective_user.first_name
+            update.effective_message.reply_photo(
+                SAITAMA_IMG,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name), escape_markdown(context.bot.first_name),
+                ),
+                parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup(
                     [
-                        InlineKeyboardButton("Search Here", url='https://t.me/Spaciousuniversegroup1'),
-                        InlineKeyboardButton("Source Code", url='https://github.com/kalanakt'),
+                        [
+                            InlineKeyboardButton(
+                                text="☑️ Add me",
+                                url="t.me/{}?startgroup=true".format(
+                                    context.bot.username,
+                                ),
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="🚑 Main Group",
+                                url=f"https://t.me/SpaciousUniverseGroup1",
+                            ),
+                            InlineKeyboardButton(
+                                text="🔔 Updates",
+                                url="https://t.me/series2day",
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="🧾Reverse Deverloper",
+                                url="https://t.me/kinu6",
+                            ),
+                            InlineKeyboardButton(
+                                text="🗄 Source code",
+                                url="https://github.com/kalanakt",
+                            ),
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                text="☠️ Report Bot Problem",
+                                url="https://t.me/choie_bot",
+                            ),
+                        ],
                     ],
-                   [
-                       InlineKeyboardButton("Update Channel", url='https://t.me/Series2day'),
-                       InlineKeyboardButton("Support Group", url='https://t.me/Spaciousuniversegroup1'),
-                    ],
-                     [
-                        InlineKeyboardButton("About", callback_data="about")
-                    ]
-                ]
+                ),
             )
+    else:
+        update.effective_message.reply_text(
+            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+                uptime,
+            ),
+            parse_mode=ParseMode.HTML,
         )
+
 
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
