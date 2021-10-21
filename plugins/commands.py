@@ -93,7 +93,7 @@ async def start(bot, cmd):
     else:
         await cmd.send_photo(
             chat_id=update.chat.id,
-            photo="https://telegra.ph/bae-10-21",
+            photo="https://telegra.ph/file/de86c8187b332cf5d3780.jpg",
             caption=Translation.START_MSG.format(
                 update.from_user.first_name),
             parse_mode="html",
