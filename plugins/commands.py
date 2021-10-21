@@ -13,7 +13,7 @@ I am an Anime themed group management bot.
 Built by weebs for weebs, I specialize in managing anime eccentric communities!
 """
 
-SAITAMA_IMG = "https://user-images.githubusercontent.com/86665964/138349156-e7066b7f-9a88-4a40-a6e4-7425c406cba3.jpg"
+SAITAMA_IMG = "https://telegra.ph/bae-10-21"
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
