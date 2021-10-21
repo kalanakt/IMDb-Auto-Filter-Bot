@@ -56,8 +56,7 @@ async def start(bot, cmd):
                 await bot.send_message(
                     chat_id=cmd.from_user.id,
                     text="Something went Wrong.",
-                    parse_mode="markdown",
-                    disable_web_page_preview=True
+                    parse_mode="markdown"
                 )
                 return
         try:
