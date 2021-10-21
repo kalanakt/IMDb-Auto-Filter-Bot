@@ -6,7 +6,6 @@ from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
-REPLY_PHOTO = "https://user-images.githubusercontent.com/86665964/138349156-e7066b7f-9a88-4a40-a6e4-7425c406cba3.jpg"
 
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
@@ -95,7 +94,6 @@ async def start(bot, cmd):
     else:
         await cmd.reply_text(
             START_MSG,
-            REPLY_PHOTO,
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
