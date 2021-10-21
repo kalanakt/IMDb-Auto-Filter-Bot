@@ -99,8 +99,7 @@ async def start(bot, cmd):
             )
         )
     else:
-        first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
+        await cmd.reply_photo(
                 SAITAMA_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name),
@@ -146,15 +145,6 @@ async def start(bot, cmd):
                     ],
                 ),
             )
-    else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
-                uptime,
-            ),
-            parse_mode=ParseMode.HTML,
-        )
-
-
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
