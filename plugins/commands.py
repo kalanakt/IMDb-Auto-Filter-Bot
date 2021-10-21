@@ -93,52 +93,32 @@ async def start(bot, cmd):
             )
         )
     else:
-        await bot.send_photo(
-        chat_id=update.chat.id,
-        photo="https://telegra.ph/bae-10-21",
-        caption=Translation.START_TEXT.format(
+        await cmd.send_photo(
+            chat_id=update.chat.id,
+            photo="https://telegra.ph/bae-10-21",
+            caption=Translation.START_MSG.format(
                 update.from_user.first_name),
-        reply_markup=reply_markup,
-        parse_mode="html",
-        reply_to_message_id=update.message_id
-    )
-        reply_markup=InlineKeyboardMarkup(
+            reply_markup=reply_markup,
+            parse_mode="html",
+            reply_to_message_id=update.message_id
+        )
+            reply_markup=InlineKeyboardMarkup(
+                [
                     [
-                        [
-                            InlineKeyboardButton(
-                                text="☑️ Add me",
-                                url="t.me/sumovie_bot"
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="🚑 Main Group",
-                                url=f"https://t.me/SpaciousUniverseGroup1",
-                            ),
-                            InlineKeyboardButton(
-                                text="🔔 Updates",
-                                url="https://t.me/series2day",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="🧾Reverse Deverloper",
-                                url="https://t.me/kinu6",
-                            ),
-                            InlineKeyboardButton(
-                                text="🗄 Source code",
-                                url="https://github.com/kalanakt",
-                            ),
-                        ],
-                        [
-                            InlineKeyboardButton(
-                                text="☠️ Report Bot Problem",
-                                url="https://t.me/choie_bot",
-                            ),
-                        ],
+                        InlineKeyboardButton("Search Here", url='https://t.me/Spaciousuniversegroup1'),
+                        InlineKeyboardButton("Source Code", url='https://github.com/kalanakt/imdb-autofilter-bot'),
                     ],
-                ),
+                   [
+                       InlineKeyboardButton("Update Channel", url='https://t.me/Series2day'),
+                       InlineKeyboardButton("Support Group", url='https://t.me/Spaciousuniversegroup1'),
+                    ],
+                     [
+                        InlineKeyboardButton("Report Problems", url='https://t.me/kinu6'),
+                        InlineKeyboardButton("About", callback_data="about")
+                    ]
+                ]
             )
+        )
                 
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
@@ -228,4 +208,4 @@ async def bot_info(bot, message):
         ]
         ]
     
-    await message.reply(text="<b>Reverse Developer : <a href='https://t.me/kinu6'> Hash Minner</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/kalanakt/imdb-autofilter-bot'>Click here</a>\nUpdate Channel : <a href='https://t.me/series2day'>ErrorXBotz</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="<b>Reverse Developer : <a href='https://t.me/kinu6'> Hash Minner</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
