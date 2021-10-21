@@ -7,12 +7,6 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-PM_START_TEXT = """
-Hey hi {}, I'm {}!
-I am an Anime themed group management bot.
-Built by weebs for weebs, I specialize in managing anime eccentric communities!
-"""
-
 SAITAMA_IMG = "https://telegra.ph/bae-10-21"
 
 @Client.on_message(filters.command("start"))
@@ -101,9 +95,7 @@ async def start(bot, cmd):
     else:
         await cmd.reply_photo(
                 SAITAMA_IMG,
-                PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name),
-                ),
+                START_MSG,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
