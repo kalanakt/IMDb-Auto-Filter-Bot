@@ -12,7 +12,7 @@ import importlib
 SUZY_IMG = "https://user-images.githubusercontent.com/86665964/138349156-e7066b7f-9a88-4a40-a6e4-7425c406cba3.jpg"
 
 PM_START_TEXT = """
-Hi {}, I'm {}!
+Hi {First_Name}, I'm Bae Suzy!
 I am an Advance Auto-Filter bot.Works At Spacious Universe Group.
 Maintance By @kinu6 
 """
@@ -105,9 +105,7 @@ async def start(bot, cmd):
     else:
         await cmd.reply_photo(
             SUZY_IMG,
-            PM_START_TEXT.format(
-                    escape_markdown(first_name), escape_markdown(context.bot.first_name),
-            ),    
+            PM_START_TEXT,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
