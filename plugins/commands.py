@@ -100,7 +100,7 @@ async def start(bot, cmd):
                 update.from_user.first_name),
             reply_markup=reply_markup,
             parse_mode="html",
-            reply_to_message_id=update.message_id
+            reply_to_message_id=update.message_id,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
