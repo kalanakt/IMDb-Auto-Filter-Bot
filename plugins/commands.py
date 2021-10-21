@@ -106,7 +106,7 @@ async def start(bot, cmd):
         await cmd.reply_photo(
             SUZY_IMG,
             PM_START_TEXT,
-            parse_mode=ParseMode.MARKDOWN,
+            parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
