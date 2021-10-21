@@ -197,7 +197,7 @@ async def bot_info(bot, message):
     buttons = [
         [
             InlineKeyboardButton('Update Channel', url='https://t.me/series2day'),
-            InlineKeyboardButton('Source Code', url='https://github.com/kalanakt/imdb-autofilter-bot')
+            InlineKeyboardButton('Source Code', url='https://github.com/kalanakt')
         ]
         ]
     
