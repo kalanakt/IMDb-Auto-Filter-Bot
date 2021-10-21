@@ -93,12 +93,16 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_photo(
-                SAITAMA_IMG,
-                START_MSG,
-                parse_mode="Markdown",
-                disable_web_page_preview=False,
-                reply_markup=InlineKeyboardMarkup(
+        await bot.send_photo(
+        chat_id=update.chat.id,
+        photo="https://telegra.ph/bae-10-21",
+        caption=Translation.START_TEXT.format(
+                update.from_user.first_name),
+        reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=update.message_id
+    )
+        reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
@@ -135,6 +139,7 @@ async def start(bot, cmd):
                     ],
                 ),
             )
+                
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
