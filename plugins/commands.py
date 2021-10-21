@@ -7,8 +7,6 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-SAITAMA_IMG = "https://telegra.ph/bae-10-21"
-
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -98,7 +96,6 @@ async def start(bot, cmd):
             photo="https://telegra.ph/bae-10-21",
             caption=Translation.START_MSG.format(
                 update.from_user.first_name),
-            reply_markup=reply_markup,
             parse_mode="html",
             reply_to_message_id=update.message_id,
             reply_markup=InlineKeyboardMarkup(
