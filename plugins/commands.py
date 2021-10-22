@@ -6,7 +6,9 @@ from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
+import html
 
+BaeSuzy_IMG = "https://telegra.ph/file/567d0949f37bea57085b7.jpg"
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -91,11 +93,11 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.send_photo(
+        await bot.send_photo(
             chat_id=update.chat.id,
-            photo="https://telegra.ph/file/de86c8187b332cf5d3780.jpg",
-            caption=Translation.START_MSG.format(
-                update.from_user.first_name),
+            BaeSuzy_IMG,
+            caption=Translation.START_MSG
+            chat_id=update.chat.id,
             parse_mode="html",
             reply_to_message_id=update.message_id,
             reply_markup=InlineKeyboardMarkup(
