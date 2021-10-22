@@ -94,12 +94,9 @@ async def start(bot, cmd):
         )
     else:
         await bot.send_photo(
-            chat_id=update.chat.id,
             BaeSuzy_IMG,
             caption=Translation.START_MSG
-            chat_id=update.chat.id,
             parse_mode="html",
-            reply_to_message_id=update.message_id,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
