@@ -95,7 +95,7 @@ async def start(bot, cmd):
     else:
         await bot.send_photo(
             BaeSuzy_IMG,
-            caption=Translation.START_MSG,
+            START_MSG,
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
                 [
