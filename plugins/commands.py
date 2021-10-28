@@ -7,8 +7,6 @@ from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-BaeSuzy_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
-bae_MSG = "This is test"
 @Client.on_message(filters.command("start"))
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
@@ -93,9 +91,9 @@ async def start(bot, cmd):
             )
         )
     else:
-        await bot.send_photo(
-            BaeSuzy_IMG,
-            bae_MSG,
+        await bot.send_message(
+            chat_id=cmd.from_user.id,
+            START_MSG,
             parse_mode="Markdown",
             reply_markup=InlineKeyboardMarkup(
                 [
