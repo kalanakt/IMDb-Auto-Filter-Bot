@@ -66,8 +66,8 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Search again', url= 'https://t.me/Spaciousuniversegroup1'),
-                        InlineKeyboardButton('share group', url='https://telegram.me/share/url?url=https://t.me/Spaciousuniversegroup1')
+                        InlineKeyboardButton('Search again', url=invite_link.invite_link),
+                        InlineKeyboardButton('Search Inline', switch_inline_query_current_chat='')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -92,27 +92,20 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_text(
-            START_MSG,
-            parse_mode="Markdown",
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("Search Here", url='https://t.me/Spaciousuniversegroup1'),
-                        InlineKeyboardButton("Source Code", url='https://github.com/kalanakt/imdb-autofilter-bot'),
-                    ],
-                   [
-                       InlineKeyboardButton("Update Channel", url='https://t.me/Series2day'),
-                       InlineKeyboardButton("Support Group", url='https://t.me/Spaciousuniversegroup1'),
-                    ],
-                     [
-                        InlineKeyboardButton("About", callback_data="about")
-                    ]
-                ]
-            )
+        buttons = [[
+            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 Updates', url='http://t.me/TMWAD')
+            ],[
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('😊 About', callback_data='about')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.START_TXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
-
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
@@ -196,7 +189,7 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Update Channel', url='https://t.me/series2day'),
+            InlineKeyboardButton('My Group', url=invite_link.invite_link),
             InlineKeyboardButton('Source Code', url='https://github.com/kalanakt/imdb-autofilter-bot')
         ]
         ]
