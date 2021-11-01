@@ -2,7 +2,7 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, PICS
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
@@ -93,8 +93,7 @@ async def start(bot, cmd):
         )
     else:
         buttons = [[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='http://t.me/TMWAD')
+            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
