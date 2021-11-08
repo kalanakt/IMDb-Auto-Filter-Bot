@@ -103,7 +103,7 @@ async def start(bot, cmd):
                         InlineKeyboardButton("Source Code", url='https://github.com/kalanakt/imdb-autofilter-bot'),
                     ],
                    [
-                       InlineKeyboardButton("Update Channel", url='https://t.me/Series2day'),
+                       InlineKeyboardButton("Update Channel", url='https://t.me/slmovieshubsl'),
                        InlineKeyboardButton("Support Group", url='https://t.me/Spaciousuniversegroup1'),
                     ],
                      [
@@ -196,7 +196,7 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Update Channel', url='https://t.me/series2day'),
+            InlineKeyboardButton('Series Channel', url='https://t.me/slmovieshubsl'),
             InlineKeyboardButton('Source Code', url='https://github.com/kalanakt/imdb-autofilter-bot')
         ]
         ]
