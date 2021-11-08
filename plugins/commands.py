@@ -66,8 +66,8 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Search again', url= 'https://t.me/Spaciousuniversegroup1'),
-                        InlineKeyboardButton('share group', url='https://telegram.me/share/url?url=https://t.me/Spaciousuniversegroup1')
+                        InlineKeyboardButton('Search again', url= 'https://t.me/slmovieshubsl'),
+                        InlineKeyboardButton('share group', url='https://telegram.me/share/url?url=https://t.me/slmovieshubsl')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -99,12 +99,12 @@ async def start(bot, cmd):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Search Here", url='https://t.me/Spaciousuniversegroup1'),
+                        InlineKeyboardButton("Search Here", url='https://t.me/slmovieshubsl'),
                         InlineKeyboardButton("Source Code", url='https://github.com/kalanakt/imdb-autofilter-bot'),
                     ],
                    [
-                       InlineKeyboardButton("Update Channel", url='https://t.me/slmovieshubsl'),
-                       InlineKeyboardButton("Support Group", url='https://t.me/Spaciousuniversegroup1'),
+                       InlineKeyboardButton("Series Channel", url='https://t.me/timelytvshow'),
+                       InlineKeyboardButton("Support Group", url='https://t.me/slmovieshubsl'),
                     ],
                      [
                         InlineKeyboardButton("About", callback_data="about")
@@ -196,7 +196,7 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Series Channel', url='https://t.me/slmovieshubsl'),
+            InlineKeyboardButton('Series Channel', url='https://t.me/timelytvshow'),
             InlineKeyboardButton('Source Code', url='https://github.com/kalanakt/imdb-autofilter-bot')
         ]
         ]
