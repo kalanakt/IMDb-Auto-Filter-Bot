@@ -92,17 +92,25 @@ async def start(bot, cmd):
             )
         )
     else:
-        buttons = [[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_message(
-            caption=script.START_TXT.format(message.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode='html'
+        await cmd.reply_text(
+            START_MSG,
+            parse_mode="Markdown",
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("Search Here", url='https://t.me/slmovieshubsl '),
+                        InlineKeyboardButton("Source Code", url='https://github.com/kalanakt/imdb-autofilter-bot'),
+                    ],
+                   [
+                       InlineKeyboardButton("Update Channel", url='https://t.me/timelytvshow'),
+                       InlineKeyboardButton("Support Group", url='https://t.me/slmovieshubsl '),
+                    ],
+                     [
+                        InlineKeyboardButton("About", callback_data="about")
+                    ]
+                ]
+            )
         )
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
@@ -187,7 +195,7 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('My Group', url=invite_link.invite_link),
+            InlineKeyboardButton('My Group', url='https://t.me/slmovieshubsl '),
             InlineKeyboardButton('Source Code', url='https://github.com/kalanakt/imdb-autofilter-bot')
         ]
         ]
