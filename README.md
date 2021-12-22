@@ -20,6 +20,7 @@
 
 ### Easy Way
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kalanakt/imdb-autofilter-bot)
+
 ### Hard Way
 
 ```bash
